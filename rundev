@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# start development servers in additional tabs of the current terminal
+
+home=`pwd`
+XTERM=/usr/bin/gnome-terminal
+
+# start client npm server
+cd $home/web
+$XTERM --tab -- npm run serve
+
+# start api server
+cd $home/api
+echo > storage/logs/laravel.log
+
+$XTERM --tab -- php artisan serve
+$XTERM --tab -- tail -f storage/logs/laravel.log
+
