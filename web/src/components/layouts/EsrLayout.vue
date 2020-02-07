@@ -1,10 +1,11 @@
 <template>
-    <div id="app-container" class="container-fluid app-container">
+    <div id="app-container" class="app-container">
         <!-- see styles section below for color descriptions -->
         <app-navbar id="nav" navbarColorType="dark" navbarColor="#13314d">
             <template v-slot:left>
                 <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
                 <b-nav-item :to="{ name: 'about' }" exact exact-active-class="active-nav">About</b-nav-item>
+                <b-nav-item :to="{ name: 'esr' }" exact exact-active-class="active-nav">ESR</b-nav-item>
             </template>
 
             <!-- for future use, when we add login capabilities
@@ -72,7 +73,8 @@ body {
     font-weight: 100;
 }
 .app-container {
-    margin-top: 60px; /* account for top navbar */
+    padding-top: 60px; /* account for top navbar */
+    padding: 10px;
 }
 .app-compl-accent { /* complimentary accent color */
     color: #2c3e50;
@@ -113,7 +115,7 @@ body {
     background-color: #c1b3af;
 }
 .active-nav {
-    background-color: #1c1953;
+    background-color: #2C5270;
 }
 
 /*

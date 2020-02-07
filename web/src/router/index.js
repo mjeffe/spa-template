@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import baseRoutes from '@/router/base.js';
+import esrRoutes from '@/router/esr.js';
 // import authRoutes from '@/router/auth.js';
 // import adminRoutes from '@/router/admin.js';
 
@@ -12,6 +13,7 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes: [
         ...baseRoutes,
+        ...esrRoutes,
         // ...authRoutes,
         // ...adminRoutes,
 
