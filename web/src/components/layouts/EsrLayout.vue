@@ -1,0 +1,128 @@
+<template>
+    <div id="app-container" class="container-fluid app-container">
+        <!-- see styles section below for color descriptions -->
+        <app-navbar id="nav" navbarColorType="dark" navbarColor="#13314d">
+            <template v-slot:left>
+                <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
+                <b-nav-item :to="{ name: 'about' }" exact exact-active-class="active-nav">About</b-nav-item>
+            </template>
+
+            <!-- for future use, when we add login capabilities
+            <template v-slot:right v-if="!isLoggedIn">
+                <b-nav-item :to="{ name: 'login' }">Login</b-nav-item>
+            </template>
+            <template v-slot:right v-else>
+                <b-nav-item :to="{ name: 'logout' }">Logout</b-nav-item>
+                <b-nav-item v-if="isAdmin" :to="{ name: 'admin' }" exact exact-active-class="active-nav">
+                    Admin
+                </b-nav-item>
+            </template>
+            -->
+        </app-navbar>
+
+        <transition name="page-fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+
+        <!-- the notifications container just needs to be somewhere on the page -->
+        <app-alerts/>
+    </div>
+</template>
+
+<script>
+import { mapGetters } from 'vuex';
+import NavbarTop from '@/components/NavbarTop.vue';
+import AppAlerts from '@/components/AppAlerts.vue';
+
+export default {
+    name: 'Layout',
+
+    components: {
+        'app-navbar': NavbarTop,
+        'app-alerts': AppAlerts,
+    },
+    computed: {
+        ...mapGetters('auth', [
+            'isLoggedIn',
+            'isAdmin',
+        ]),
+    },
+};
+</script>
+
+<style lang="scss">
+@import "@/assets/styles/main.scss";
+
+/* Default Layout Theme:
+ *
+ * color scheme:
+ * navbar #13314d - dark slate blue - DWS website (defined above as navbar prop, and below in class)
+ * navbar highlight #1c1953 - slightly more purple
+ * background #e7dfdd - tan/gray parchment paper
+ * background highlight #c1b3af - slightly darker tan
+ * background dark highlight #9f8a84 - a little more darker tan
+ * text #13314d - navbar color
+ * complimentary accent #c0b283 - gold
+ * contrasting accent #b02b2b - DWS red
+ *
+ */
+body {
+    background-color: #e7dfdd;
+    color: #13314d;
+    font-weight: 100;
+}
+.app-container {
+    margin-top: 60px; /* account for top navbar */
+}
+.app-compl-accent { /* complimentary accent color */
+    color: #2c3e50;
+}
+.app-contr-accent { /* contrasting accent color */
+    color: #2c3e50;
+}
+.app-bg-highlight {
+    color: #c1b3af;
+}
+.app-bg-highlight-dark {
+    color: #9f8a84;
+}
+
+/*
+ * b-nav set agains the background color
+*/
+.bg-nav {
+    a:link { color:#544a32; font-weight: bold; }
+    a:visited { color:#544a32; }
+    a:hover { background-color:#c1b3af; }
+    a:active { background-color:#c1b3af; }
+}
+
+.app-navbar-color {
+    color: #13314d;
+}
+#nav {
+    a {
+        &.router-link-exact-active {
+            font-weight: bold;
+            // font-size: larger;
+        }
+    }
+}
+
+.active-tab {
+    background-color: #c1b3af;
+}
+.active-nav {
+    background-color: #1c1953;
+}
+
+/*
+ * vue-router transitions
+ */
+.page-fade-enter-active, .page-fade-leave-active {
+    transition: opacity .3s
+}
+.page-fade-enter, .page-fade-leave-to {
+    opacity: 0;
+}
+</style>
