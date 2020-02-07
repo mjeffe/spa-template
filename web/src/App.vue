@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
+import Layout from '@/components/layouts/DefaultLayout.vue';
 
 export default {
     components: {
-        layout: DefaultLayout,
+        layout: Layout,
     }
 };
 </script>

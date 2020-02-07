@@ -33,7 +33,7 @@ import NavbarTop from '@/components/NavbarTop.vue';
 import AppAlerts from '@/components/AppAlerts.vue';
 
 export default {
-    name: 'DefaultLayout',
+    name: 'Layout',
 
     components: {
         'app-navbar': NavbarTop,
