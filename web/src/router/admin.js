@@ -3,6 +3,7 @@ const adminRoutes = [
         path: '/admin',
         name: 'admin',
         component: () => import(/* webpackChunkName: "admin" */ '../views/Admin.vue'),
+        meta: { requiresAuth: true },
         children: [
             {
                 path: 'users',

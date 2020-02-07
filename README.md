@@ -7,7 +7,7 @@ This project is disctinct from the `template-api-clients` project in that this
 is only intended to run with a single client, it does not implement realms,
 temporal tables or an of the other sophisticated stuff in that project.
 
-## CLoning
+## Cloning
 
 To use this template as the starting point for a new project, you need get a
 bare clone, then push to your new repo.

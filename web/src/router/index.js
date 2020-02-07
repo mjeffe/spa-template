@@ -15,19 +15,30 @@ const router = new VueRouter({
         ...authRoutes,
         ...adminRoutes,
 
-        // otherwise redirect to home
-        { path: '*', redirect: '/auth/login' }
+        // catchall, unmatched routes show 404
+        {
+            path: '*',
+            name: '404',
+            component: () => import(/* webpackChunkName: "404" */ '../views/404.vue'),
+        },
     ]
 });
 
-router.beforeEach((to, from, next) => {
-    // redirect to login page if not logged in and trying to access a restricted page
-    const publicPages = ['/auth/login'];
-    const authRequired = !publicPages.includes(to.path);
-    const loggedIn = localStorage.getItem('token');
+function isUserAuthorizedForRoute(to) {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        const loggedIn = localStorage.getItem('token');
 
-    if (authRequired && !loggedIn) {
-        return next('/auth/login');
+        if (!loggedIn) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+router.beforeEach((to, from, next) => {
+    if (!isUserAuthorizedForRoute(to)) {
+        return next({ name: 'login' });
     }
 
     next();

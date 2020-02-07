@@ -8,6 +8,7 @@ const authRoutes = [
     {
         path: '/auth/logout',
         name: 'logout',
+        meta: { requiresAuth: true },
         component: () => import(/* webpackChunkName: "logout" */ '../views/auth/Logout.vue')
     },
 ];
