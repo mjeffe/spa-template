@@ -7,6 +7,25 @@ This project is disctinct from the `template-api-clients` project in that this
 is only intended to run with a single client, it does not implement realms,
 temporal tables or an of the other sophisticated stuff in that project.
 
+## CLoning
+
+To use this template as the starting point for a new project, you need get a
+bare clone, then push to your new repo.
+```
+# create new repo in the AWS Console, or using the cli like this:
+aws codecommit create-repository --repository-name my_repo --repository-description "My new repository"
+
+# get a bare clone of this template
+git clone --bare https://git-codecommit.us-east-1.amazonaws.com/v1/repos/template-spa my_repo_temp
+
+# and push it with the --all flag, to the newly create CodeCommit repo
+cd my_repo_temp
+git push https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo --all
+
+# now clone to a working copy
+cd ../
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo
+
 ## Install and Init
 
 For development, you can get up and running quickly by running:
