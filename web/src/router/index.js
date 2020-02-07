@@ -15,7 +15,7 @@ const router = new VueRouter({
         ...authRoutes,
         ...adminRoutes,
 
-        // catchall, unmatched routes show 404
+        // catchall, show 404 for any unrecognized routes
         {
             path: '*',
             name: '404',
@@ -38,7 +38,7 @@ function isUserAuthorizedForRoute(to) {
 
 router.beforeEach((to, from, next) => {
     if (!isUserAuthorizedForRoute(to)) {
-        return next({ name: 'login' });
+        return next('/');
     }
 
     next();
