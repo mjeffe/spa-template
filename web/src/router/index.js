@@ -2,8 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import baseRoutes from '@/router/base.js';
-import authRoutes from '@/router/auth.js';
-import adminRoutes from '@/router/admin.js';
+// import authRoutes from '@/router/auth.js';
+// import adminRoutes from '@/router/admin.js';
 
 Vue.use(VueRouter);
 
@@ -12,8 +12,8 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes: [
         ...baseRoutes,
-        ...authRoutes,
-        ...adminRoutes,
+        // ...authRoutes,
+        // ...adminRoutes,
 
         // catchall, show 404 for any unrecognized routes
         {
