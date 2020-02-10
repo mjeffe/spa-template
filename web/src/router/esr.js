@@ -1,23 +1,27 @@
 const esrRoutes = [
     {
         path: '/esr',
-        name: 'esr',
         component: () => import(/* webpackChunkName: "home" */ '../views/esr/Esr.vue'),
         children: [
             {
-                // default, load the Home component when /esr is loaded
-                path: '',
-                component: () => import(/* webpackChunkName: "esr-home" */ '../views/esr/Home.vue'),
+                path: 'major',
+                name: 'esr.major',
+                component: () => import(/* webpackChunkName: "esr-major" */ '../views/esr/Major.vue'),
             },
             {
-                path: 'home',
-                name: 'esr-home',
-                component: () => import(/* webpackChunkName: "esr-home" */ '../views/esr/Home.vue'),
+                path: 'degree',
+                name: 'esr.degree',
+                component: () => import(/* webpackChunkName: "esr-degree" */ '../views/esr/Degree.vue'),
             },
             {
                 path: 'institution',
-                name: 'esr-institution',
+                name: 'esr.institution',
                 component: () => import(/* webpackChunkName: "esr-institution" */ '../views/esr/Institution.vue'),
+            },
+            {   /* default */
+                path: '',
+                name: 'esr.home',
+                component: () => import(/* webpackChunkName: "esr-home" */ '../views/esr/Home.vue'),
             },
         ],
     },

@@ -5,7 +5,7 @@
             <template v-slot:left>
                 <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
                 <b-nav-item :to="{ name: 'about' }" exact exact-active-class="active-nav">About</b-nav-item>
-                <b-nav-item :to="{ name: 'esr' }" exact exact-active-class="active-nav">ESR</b-nav-item>
+                <b-nav-item :to="{ name: 'esr.home' }" exact exact-active-class="active-nav">ESR</b-nav-item>
             </template>
 
             <!-- for future use, when we add login capabilities
