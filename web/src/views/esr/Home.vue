@@ -1,31 +1,27 @@
 <template>
     <div>
-        <ESRMasthead />
-        <InstitutionSelection @selected="selectionInstitution"/>
+        <div xclass="text-center" xstyle="max-height: 284px; max-width: 640px;" >
+            <ESRMasthead />
+        </div>
+        <HomeSelector />
     </div>
 </template>
 
 <script>
 import ESRMasthead from './ESRMasthead.vue';
-import InstitutionSelection from './InstitutionSelection.vue';
+import HomeSelector from './HomeSelector.vue';
 
 export default {
     name: 'ESRHome',
     components: {
         ESRMasthead,
-        InstitutionSelection,
+        HomeSelector,
     },
 
     data() {
         return {
             // selected: '',
         };
-    },
-
-    methods: {
-        selectionInstitution(selection) {
-            this.$router.push({ name: 'esr.institution' });
-        }
     },
 };
 </script>
