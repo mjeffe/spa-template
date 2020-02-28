@@ -1,9 +1,21 @@
 <template>
     <div class="logo-container">
-        <div class="d-flex justify-content-around">
-            <img alt="ADWS Logo" src="@/assets/images/esr/2018/logo-adws.jpg" />
-            <img alt="ADHE Logo" src="@/assets/images/esr/2018/logo-adhe.jpg" />
-            <img alt="ARC Logo" src="@/assets/images/esr/2018/logo-arc.jpg" />
+        <div class="d-flex justify-content-end">
+            <img class="mx-3"
+                 alt="ADWS Logo"
+                 height="60" width="93"
+                 src="@/assets/images/esr/2019/logo-adws-93x60.jpg" />
+
+            <img class="mx-3"
+                 alt="ADHE Logo"
+                 height="60"
+                 width="81"
+                 src="@/assets/images/esr/2019/logo-adhe-81x60.jpg" />
+
+            <img class="mx-3"
+                 alt="ARC Logo"
+                 height="60" width="129"
+                 src="@/assets/images/esr/2019/logo-arc-129x60.jpg" />
         </div>
     </div>
 </template>
@@ -16,7 +28,6 @@ export default {
 
 <style scoped lang="scss">
 .logo-container {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
 }
 </style>
