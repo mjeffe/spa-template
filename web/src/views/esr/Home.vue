@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div xclass="text-center" xstyle="max-height: 284px; max-width: 640px;" >
-            <ESRMasthead />
-        </div>
+        <ESRMasthead />
         <HomeSelector />
     </div>
 </template>

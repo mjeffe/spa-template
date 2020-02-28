@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p class="mt-3 h4 text-center">Education and Employment Information</p>
         <b-card-group deck>
             <b-card
               border-variant="secondary"
@@ -34,7 +35,6 @@
                 </b-card-text>
             </b-card>
         </b-card-group>
-
     </div>
 </template>
 

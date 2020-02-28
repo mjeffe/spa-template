@@ -1,21 +1,24 @@
 <template>
-    <b-carousel
-        id="esr-carousel"
-        v-model="slide"
-        :interval="4000"
-        fade
-        controls
-        indicators
-        img-width="650"
-        img-height="284"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-    >
+    <div xclass="esr-masthead">
+        <b-carousel
+            id="esr-carousel"
+            v-model="slide"
+            :interval="4000"
+            fade
+            controls
+            indicators
+            img-width="1240"
+            img-height="350"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+        >
 
-        <b-carousel-slide img-src="@/assets/images/esr/2018/first-year-earnings-graph.jpg"></b-carousel-slide>
-        <b-carousel-slide img-src="@/assets/images/esr/2018/cost-of-tuition-graph.jpg"></b-carousel-slide>
-        <b-carousel-slide img-src="@/assets/images/esr/2018/thirty-year-career-earning-graph.jpg"></b-carousel-slide>
-    </b-carousel>
+            <b-carousel-slide img-src="@/assets/images/esr/2018/graph-1240x350-first-year-earnings.png" />
+            <b-carousel-slide img-src="@/assets/images/esr/2018/graph-1240x350-cost-of-tuition.png" />
+            <b-carousel-slide img-src="@/assets/images/esr/2018/graph-1240x350-thirty-year-career-earnings.png" />
+        </b-carousel>
+        <hr />
+    </div>
 </template>
 
 <script>
@@ -40,4 +43,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.esr-masthead {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 </style>
