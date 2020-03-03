@@ -2,7 +2,9 @@
     <div>
         <b-form>
             <b-form-group>
-                <b-form-select v-model="selected" :options="options"></b-form-select>
+                <b-form-select v-model="selected" :options="options">
+                    <b-form-select-option :value="null">Coming Soon!</b-form-select-option>
+                </b-form-select>
             </b-form-group>
 
             <b-button v-on:click="emitSelected">View</b-button>
@@ -11,16 +13,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'MajorSelector',
 
     data() {
         return {
             selected: null,
-            options: [
-                { value: null, text: 'Comming Soon!' },
-            ],
         };
+    },
+
+    computed: {
+        ...mapState('esrRef', { options: 'majors' }),
     },
 
     methods: {
@@ -35,6 +40,12 @@ export default {
             }
         },
     },
+
+    /*
+    async created() {
+        await this.$store.dispatch('esrRef/getMajors');
+    }
+    */
 };
 </script>
 
