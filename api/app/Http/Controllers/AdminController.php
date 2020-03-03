@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Http\Controllers\BaseController;
+use App\Http\Controllers\BaseAuthController;
 use App\Http\Resources\User as UserResource;
 use App\Http\Resources\UserCollection;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 
-class AdminController extends BaseController {
+class AdminController extends BaseAuthController {
 
     public function register(RegisterUserRequest $request) {
         $user = new User();

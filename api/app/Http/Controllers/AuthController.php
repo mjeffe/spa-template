@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Http\Controllers\BaseController;
+use App\Http\Controllers\BaseAuthController;
 use App\Http\Resources\UserCollection;
 use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class AuthController extends BaseController {
+class AuthController extends BaseAuthController {
 
     public function login(Request $request) {
         $credentials = $request->only('email', 'password');

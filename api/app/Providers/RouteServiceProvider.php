@@ -37,11 +37,11 @@ class RouteServiceProvider extends ServiceProvider {
      * @return void
      */
     public function map() {
-        $this->mapApiRoutes();
-
         $this->mapWebRoutes();
 
-        $this->mapAuthRoutes();
+        $this->mapApiRoutes();
+
+        // $this->mapApiAuthRoutes();
     }
 
     protected function mapWebRoutes() {
@@ -57,10 +57,12 @@ class RouteServiceProvider extends ServiceProvider {
              ->group(base_path('routes/api.php'));
     }
 
-    // we do this to avoid csrf protection of web routes and auth protection of api routes
-    protected function mapAuthRoutes() {
+    /*
+    protected function mapApiAuthRoutes() {
         Route::prefix('v1')
+             ->middleware(['api', 'auth:api'])
              ->namespace($this->namespace)
              ->group(base_path('routes/auth.php'));
     }
+     */
 }
