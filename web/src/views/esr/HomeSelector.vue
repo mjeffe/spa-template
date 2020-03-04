@@ -70,7 +70,9 @@ export default {
         },
 
         selectInstitution(selection) {
-            this.$router.push({ name: 'esr.institution' });
+            this.$store.dispatch('esr/getInstitution', selection).then(
+                this.$router.push({ name: 'esr.institution' })
+            );
         }
     },
 };

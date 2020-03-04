@@ -7,7 +7,7 @@
                 </b-form-select>
             </b-form-group>
 
-            <b-button v-on:click="emitSelected">View</b-button>
+            <b-button :disabled="!this.selected" v-on:click="emitSelected">View</b-button>
         </b-form>
     </div>
 </template>
@@ -35,14 +35,7 @@ export default {
 
     methods: {
         emitSelected() {
-            if (this.selected) {
-                this.$emit('selected', this.selected);
-            } else {
-                this.$store.dispatch('alerts/addErrorAlert', {
-                    title: 'No Selection',
-                    text: 'Please select the degree you wish to view',
-                });
-            }
+            this.$emit('selected', this.selected);
         },
     },
 
