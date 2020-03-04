@@ -9,7 +9,7 @@
 <script>
 import ESRMasthead from './ESRMasthead.vue';
 import HomeSelector from './HomeSelector.vue';
-import ParticipantLogos from './ParticipantLogos.vue';
+import ParticipantLogos from '../ParticipantLogos.vue';
 
 export default {
     name: 'ESRHome',

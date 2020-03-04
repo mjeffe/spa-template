@@ -6,22 +6,23 @@ const esrRoutes = [
             {
                 path: 'major',
                 name: 'esr.major',
-                component: () => import(/* webpackChunkName: "esr-major" */ '../views/esr/Major.vue'),
+                component: () => import(/* webpackChunkName: "esr-major" */ '../views/esr/major/Major.vue'),
             },
             {
                 path: 'degree',
                 name: 'esr.degree',
-                component: () => import(/* webpackChunkName: "esr-degree" */ '../views/esr/Degree.vue'),
+                component: () => import(/* webpackChunkName: "esr-degree" */ '../views/esr/degree/Degree.vue'),
             },
             {
                 path: 'institution',
                 name: 'esr.institution',
-                component: () => import(/* webpackChunkName: "esr-institution" */ '../views/esr/Institution.vue'),
+                component: () => import(
+                    /* webpackChunkName: "esr-institution" */ '../views/esr/institution/Institution.vue'),
             },
             {   /* default */
                 path: '',
                 name: 'esr.home',
-                component: () => import(/* webpackChunkName: "esr-home" */ '../views/esr/Home.vue'),
+                component: () => import(/* webpackChunkName: "esr-home" */ '../views/esr/home/Home.vue'),
             },
         ],
     },
