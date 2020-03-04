@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import arc from '@/plugins/arc.js';
 import { mapState } from 'vuex';
 
 export default {
@@ -25,7 +26,11 @@ export default {
     },
 
     computed: {
-        ...mapState('esrRef', { options: 'institutions' }),
+        ...mapState('esrRef', [ 'institutions' ]),
+
+        options() {
+            return arc.arrayOfObjectsSort(this.institutions, 'text');
+        },
     },
 
     methods: {
