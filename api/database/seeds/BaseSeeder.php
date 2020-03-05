@@ -11,11 +11,11 @@ class BaseSeeder extends Seeder {
      * CSV file have a header row where field names match the table columns.
      *
      * @param $filename
-     * @param string $deliminator
+     * @param string $delimiter
      *
      * @return array
      */
-    protected function parseCsv($filename, $delimitor = ",") {
+    protected function parseCsv($filename, $delimiter = ",") {
         if (!file_exists($filename) || !is_readable($filename)) {
             throw new \Exception("Unable to read from CSV file: {$filename}{$PHP_EOL}");
         }
@@ -23,15 +23,15 @@ class BaseSeeder extends Seeder {
         $data = [];
         $header = null;
  
-        if (($handle = fopen($filename, 'r')) !== FALSE) {
-            while (($row = fgetcsv($handle, 1000, $delimitor)) !== FALSE) {
+        if (($fh = fopen($filename, 'r')) !== FALSE) {
+            while (($row = fgetcsv($fh, 1024, $delimiter)) !== FALSE) {
                 if (empty($header)) {
                     $header = $row;
                 } else {
                     $data[] = array_combine($header, $row);
                 }
             }
-            fclose($handle);
+            fclose($fh);
         }
  
         return $data;

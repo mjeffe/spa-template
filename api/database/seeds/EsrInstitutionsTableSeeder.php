@@ -5,7 +5,11 @@ class EsrInstitutionsTableSeeder extends BaseSeeder {
     public function run() {
         DB::table('esr_institutions')->truncate();
         $data = $this->parseCsv(database_path() . '/data/esr_2019_institutions.csv', '|');
-        DB::table('esr_institutions')->insert($data);
+
+        // load the table in chunks so we don't overload the db driver
+        foreach (array_chunk($data, 100) as $chunk) {
+            DB::table('esr_institutions')->insert($chunk);
+        }
 
         DB::table('esr_institutions')
             ->where('cip_4', 'ALL AREAS OF STUDY')
