@@ -4,6 +4,7 @@ export const esrRef = {
     namespaced: true,
 
     state: {
+        year: 2019,
         institutions: [],
         degrees: [],
         majors: [],
