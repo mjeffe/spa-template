@@ -12,10 +12,10 @@ class CreateEsrInstitutionsTable extends Migration {
             $table->text('fice_code');
             $table->text('institution');
             $table->text('degree');
-            $table->text('cip_2');
-            $table->text('cip_category');
-            $table->text('cip_4');
-            $table->text('cip_detail');
+            $table->text('cip_2')->nullable();
+            $table->text('cip_category')->nullable();
+            $table->text('cip_4')->nullable();
+            $table->text('cip_detail')->nullable();
             $table->integer('graduates');
             $table->integer('employed_pct');
             $table->integer('avg_first_year_wages');
