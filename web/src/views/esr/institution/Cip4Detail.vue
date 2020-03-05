@@ -4,7 +4,7 @@
             <b-col cols="5"  class="detail-title">
                 {{ cip_4.cip_4_desc }} <span v-if="cip2">{{ '(' + cip2 + '.' + cip_4.cip_4 + ')' }}</span>
             </b-col>
-            <b-col class="detail-cell">
+            <b-col cols="1" class="detail-cell">
                 {{ cip_4.graduates }}
             </b-col>
             <b-col class="detail-cell">
