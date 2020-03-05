@@ -1,6 +1,7 @@
 /*
  * Commonly used functions
  */
+import Money from './libs/ArcMoney';
 
 // import cloneDeep from 'lodash.clonedeep'; // eslint-disable-line import/extensions
 
@@ -34,5 +35,6 @@ const methods = {
 };
 
 export default {
-    ...methods
+    ...methods,
+    Money,
 };
