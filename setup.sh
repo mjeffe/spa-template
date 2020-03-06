@@ -25,8 +25,8 @@ php artisan jwt:secret
 php artisan migrate:fresh --seed
 
 cp .env.example.testing .env.testing
-php artisan key:generate
-php artisan jwt:secret
+php artisan --env=testing key:generate
+php artisan --env=testing jwt:secret
 (. .env.testing && touch database/$DB_DATABASE)
 php artisan --env=testing migrate:fresh --seed
 
