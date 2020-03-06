@@ -1,7 +1,6 @@
 <template>
-    <div class="about">
-        <h1>This is an about page</h1>
-        <h2 class="app-accent-color">Following are demos of some features</h2>
+    <div class="demo">
+        <h3 class="app-accent-color">Demo of some this project's utilities</h3>
         <ul class="list-group">
             <li class="list-group-item">
                 <router-link :to="{name: 'spinners'}">Spinners</router-link>
@@ -19,7 +18,7 @@
 
 <script>
 export default {
-    name: 'about',
+    name: 'demo',
 
     data() {
         return {

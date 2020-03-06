@@ -1,6 +1,6 @@
 <template>
     <div class="logo-container">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end border-top">
             <img class="mx-3"
                  alt="ADWS Logo"
                  height="60" width="93"
@@ -28,6 +28,6 @@ export default {
 
 <style scoped lang="scss">
 .logo-container {
-    padding-top: 80px;
+    padding: 40px 5px 5px 5px;
 }
 </style>

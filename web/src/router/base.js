@@ -6,9 +6,9 @@ const baseRoutes = [
         component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     },
     {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        path: '/demo',
+        name: 'demo',
+        component: () => import(/* webpackChunkName: "about" */ '../views/demo/Demo.vue'),
         children: [
             {
                 path: 'spinners',

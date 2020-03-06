@@ -4,8 +4,8 @@
         <app-navbar id="nav" navbarColorType="dark" navbarColor="#13314d">
             <template v-slot:left>
                 <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
-                <b-nav-item :to="{ name: 'about' }" exact exact-active-class="active-nav">About</b-nav-item>
                 <b-nav-item :to="{ name: 'esr.home' }" exact exact-active-class="active-nav">ESR</b-nav-item>
+                <b-nav-item :to="{ name: 'demo' }" exact exact-active-class="active-nav">Demo</b-nav-item>
             </template>
 
             <!-- for future use, when we add login capabilities
@@ -21,9 +21,11 @@
             -->
         </app-navbar>
 
-        <transition name="page-fade" mode="out-in">
-            <router-view></router-view>
-        </transition>
+        <div class="app-content">
+            <transition name="page-fade" mode="out-in">
+                <router-view></router-view>
+            </transition>
+        </div>
 
         <!-- the notifications container just needs to be somewhere on the page -->
         <app-alerts/>
@@ -73,8 +75,10 @@ body {
     font-weight: 100;
 }
 .app-container {
-    padding-top: 60px; /* account for top navbar */
     padding: 10px;
+}
+.app-content {
+    margin-top: 50px; /* account for top navbar */
 }
 .app-compl-accent { /* complimentary accent color */
     color: #2c3e50;
