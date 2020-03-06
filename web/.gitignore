@@ -5,7 +5,6 @@ node_modules
 /public/css
 /public/img
 /public/js
-/public/index.html
 
 # local env files
 .env.local
