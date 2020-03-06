@@ -21,6 +21,7 @@ class CreateEsrInstitutionsTable extends Migration {
             $table->integer('avg_first_year_wages');
             $table->integer('full_time_pct');
             $table->integer('avg_first_year_full_time_wages');
+            $table->integer('institution_years');
         });
     }
 

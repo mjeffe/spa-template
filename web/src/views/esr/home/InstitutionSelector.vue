@@ -28,8 +28,22 @@ export default {
     computed: {
         ...mapState('esrRef', [ 'institutions' ]),
 
+        twoYearInstitutions() {
+            return this.institutions.filter(item => item.institution_years === '2');
+        },
+
+        fourYearInstitutions() {
+            return this.institutions.filter(item => item.institution_years === '4');
+        },
+
         options() {
-            return arc.arrayOfObjectsSort(this.institutions, 'text');
+            return [{
+                label: 'Two Year Institutions',
+                options: arc.arrayOfObjectsSort(this.twoYearInstitutions, 'text'),
+            }, {
+                label: 'Four Year Institutions',
+                options: arc.arrayOfObjectsSort(this.fourYearInstitutions, 'text'),
+            }];
         },
     },
 

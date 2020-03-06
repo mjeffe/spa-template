@@ -6,15 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\EsrInstitution;
 use App\Http\Resources\RefCollection;
-//use App\Http\Resources\Ref as RefResource;
+use App\Http\Resources\RefInstitutions;
 use App\Http\Controllers\BaseController;
 
 class RefController extends BaseController {
     public function institutions() {
-        return new RefCollection(
-            EsrInstitution::select('fice_code as value', 'institution as text')
+        return RefInstitutions::collection(
+            EsrInstitution::select('fice_code as value', 'institution as text', 'institution_years')
                 ->distinct()
                 ->where('reporting_level', 3)
+                ->orderBy('institution_years')->orderBy('institution')
                 ->get()
         );
     }
