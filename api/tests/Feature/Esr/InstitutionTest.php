@@ -5,14 +5,15 @@ namespace Tests\Feature\Esr;
 use Tests\BaseTestCase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\EsrInstitution;
 
 class InstitutionTest extends BaseTestCase {
 
-    private $fice = '001092';  // UCA
-
     /** @test */
     public function it_returns_an_institutions_esr_data() {
-        $response = $this->apiGet('/esr/institution/' . $this->fice);
+        $esr = factory(EsrInstitution::class)->create();
+
+        $response = $this->apiGet('/esr/institution/' . $esr->fice_code);
 
         // dd($this->unwrap($response));
         $response->assertStatus(200);
@@ -21,7 +22,9 @@ class InstitutionTest extends BaseTestCase {
 
     /** @test */
     public function it_returns_an_institutions_esr_data_in_the_expected_structure() {
-        $response = $this->apiGet('/esr/institution/' . $this->fice);
+        $esr = factory(EsrInstitution::class)->create();
+
+        $response = $this->apiGet('/esr/institution/' . $esr->fice_code);
 
         $response->assertJsonStructure(['data' => [
             'fice_code',
