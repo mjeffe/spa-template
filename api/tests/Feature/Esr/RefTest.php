@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Esr;
 
 use Tests\BaseTestCase;
 use Illuminate\Support\Facades\DB;
@@ -17,10 +17,10 @@ class RefTest extends BaseTestCase {
     }
 
     /** @test */
-    public function it_returns_institutions_with_ref_structure() {
+    public function it_returns_institutions_with_specific_institution_ref_structure() {
         $response = $this->apiGet('/esr/ref/institutions');
 
-        $response->assertJsonStructure(['data' => [['value', 'text']]]);
+        $response->assertJsonStructure(['data' => [['value', 'text', 'institution_years']]]);
     }
 
     /** @test */
@@ -32,7 +32,7 @@ class RefTest extends BaseTestCase {
     }
 
     /** @test */
-    public function it_returns_degrees_with_ref_structure() {
+    public function it_returns_degrees_with_generic_ref_structure() {
         $response = $this->apiGet('/esr/ref/degrees');
 
         $response->assertJsonStructure(['data' => [['value', 'text']]]);
@@ -47,7 +47,7 @@ class RefTest extends BaseTestCase {
     }
 
     /** @test */
-    public function it_returns_majors_with_ref_structure() {
+    public function it_returns_majors_with_generic_ref_structure() {
         $response = $this->apiGet('/esr/ref/majors');
 
         $response->assertJsonStructure(['data' => [['value', 'text']]]);
