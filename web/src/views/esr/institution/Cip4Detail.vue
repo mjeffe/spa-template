@@ -8,13 +8,13 @@
                 {{ cip_4.graduates }}
             </b-col>
             <b-col class="detail-cell">
-                {{ formatPercent(cip_4.employed_pct) }}
+                {{ formatPercent(cip_4.pct_employed) }}
             </b-col>
             <b-col class="detail-cell">
                 {{ formatMoney(cip_4.avg_first_year_wages) }}
             </b-col>
             <b-col class="detail-cell">
-                {{ formatPercent(cip_4.full_time_pct) }}
+                {{ formatPercent(cip_4.pct_full_time) }}
             </b-col>
             <b-col class="detail-cell">
                 {{ formatMoney(cip_4.avg_first_year_full_time_wages) }}
@@ -60,5 +60,10 @@ export default {
     color: black;
     text-align: right;
     font-size: small;
+    /*
+    background-color: #cecece;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    */
 }
 </style>

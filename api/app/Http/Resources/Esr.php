@@ -16,9 +16,9 @@ class Esr extends BaseResource {
             'cip_4' => $this->cip_4,
             'cip_4_desc' => $this->cip_detail,
             'graduates' => $this->graduates,
-            'employed_pct' => $this->employed_pct,
+            'pct_employed' => $this->pct_employed,
             'avg_first_year_wages' => $this->avg_first_year_wages,
-            'full_time_pct' => $this->full_time_pct,
+            'pct_full_time' => $this->pct_full_time,
             'avg_first_year_full_time_wages' => $this->avg_first_year_full_time_wages,
         ];
     }

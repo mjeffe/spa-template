@@ -113,9 +113,9 @@ class EsrController extends BaseController {
                 'cip_4' => $row['cip_4'],
                 'cip_4_desc' => $row['cip_detail'],
                 'graduates' => $row['graduates'],
-                'employed_pct' => $row['employed_pct'],
+                'pct_employed' => $row['pct_employed'],
                 'avg_first_year_wages' => $row['avg_first_year_wages'],
-                'full_time_pct' => $row['full_time_pct'],
+                'pct_full_time' => $row['pct_full_time'],
                 'avg_first_year_full_time_wages' => $row['avg_first_year_full_time_wages'],
             ];
         }

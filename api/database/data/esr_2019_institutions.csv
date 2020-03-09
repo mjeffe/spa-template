@@ -1,4 +1,4 @@
-reporting_level|fice_code|institution|degree|cip_2|cip_category|cip_4|cip_detail|graduates|employed_pct|avg_first_year_wages|full_time_pct|avg_first_year_full_time_wages|institution_years
+reporting_level|fice_code|institution|degree|cip_2|cip_category|cip_4|cip_detail|graduates|pct_employed|avg_first_year_wages|pct_full_time|avg_first_year_full_time_wages|institution_years
 1|012860|Arkansas Northeastern College|Certificates of Proficiency|||ALL AREAS OF STUDY||308|80|23239|31|40303|2
 1|012860|Arkansas Northeastern College|Technical Certificates|||ALL AREAS OF STUDY||134|80|32751|43|41241|2
 1|012860|Arkansas Northeastern College|Associate Degrees|||ALL AREAS OF STUDY||251|78|36316|41|49706|2

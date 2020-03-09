@@ -17,9 +17,9 @@ class CreateEsrInstitutionsTable extends Migration {
             $table->text('cip_4')->nullable();
             $table->text('cip_detail')->nullable();
             $table->integer('graduates');
-            $table->integer('employed_pct');
+            $table->integer('pct_employed');
             $table->integer('avg_first_year_wages');
-            $table->integer('full_time_pct');
+            $table->integer('pct_full_time');
             $table->integer('avg_first_year_full_time_wages');
             $table->integer('institution_years');
         });

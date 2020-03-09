@@ -32,9 +32,9 @@ class EsrTest extends BaseTestCase {
             'cip_4',
             'cip_4_desc',
             'graduates',
-            'employed_pct',
+            'pct_employed',
             'avg_first_year_wages',
-            'full_time_pct',
+            'pct_full_time',
             'avg_first_year_full_time_wages'
         ]]]);
     }
