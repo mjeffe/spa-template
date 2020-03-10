@@ -1,10 +1,10 @@
 <?php
 
-class EsrInstitutionsTableSeeder extends BaseSeeder {
+class EsrTableSeeder extends BaseSeeder {
 
     public function run() {
-        DB::table('esr_institutions')->truncate();
-        $data = $this->parseCsv(database_path() . '/data/esr_2019_institutions.csv', '|');
+        DB::table('esr')->truncate();
+        $data = $this->parseCsv(database_path() . '/data/esr_2019.csv', '|');
 
         //
         // TODO: the right way would be to create a new loadFromCsv($path, $callback, $delimiter)
@@ -13,10 +13,10 @@ class EsrInstitutionsTableSeeder extends BaseSeeder {
         //
         // load the table in chunks so we don't overload the db driver
         foreach (array_chunk($data, 10) as $chunk) {
-            DB::table('esr_institutions')->insert($chunk);
+            DB::table('esr')->insert($chunk);
         }
 
-        DB::table('esr_institutions')
+        DB::table('esr')
             ->where('cip_4', 'ALL AREAS OF STUDY')
             ->where('cip_category', '')
             ->update([

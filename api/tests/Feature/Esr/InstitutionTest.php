@@ -5,13 +5,13 @@ namespace Tests\Feature\Esr;
 use Tests\BaseTestCase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\EsrInstitution;
+use App\Models\Esr;
 
 class InstitutionTest extends BaseTestCase {
 
     /** @test */
     public function it_returns_an_institutions_esr_data() {
-        $esr = factory(EsrInstitution::class)->create();
+        $esr = factory(Esr::class)->create();
 
         $response = $this->apiGet('/esr/institution/' . $esr->fice_code);
 
@@ -22,7 +22,7 @@ class InstitutionTest extends BaseTestCase {
 
     /** @test */
     public function it_returns_an_institutions_esr_data_in_the_expected_structure() {
-        $esr = factory(EsrInstitution::class)->create();
+        $esr = factory(Esr::class)->create();
 
         $response = $this->apiGet('/esr/institution/' . $esr->fice_code);
 

@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEsrInstitutionsTable extends Migration {
+class CreateEsrTable extends Migration {
     public function up() {
-        Schema::create('esr_institutions', function (Blueprint $table) {
+        Schema::create('esr', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('reporting_level');
             $table->text('fice_code');
@@ -26,6 +26,6 @@ class CreateEsrInstitutionsTable extends Migration {
     }
 
     public function down() {
-        Schema::dropIfExists('esr_institutions');
+        Schema::dropIfExists('esr');
     }
 }

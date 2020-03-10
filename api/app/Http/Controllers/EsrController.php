@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\EsrInstitution;
+use App\Models\Esr;
 use App\Http\Resources\EsrCollection;
 use App\Http\Resources\Esr as EsrResource;
 use App\Http\Controllers\BaseController;
@@ -14,7 +14,7 @@ class EsrController extends BaseController {
     // table format - pretty much return as is
     public function Xinstitution(Request $request, $ficeCode) {
         return new EsrCollection(
-            EsrInstitution::where('fice_code', $ficeCode)
+            Esr::where('fice_code', $ficeCode)
                 ->orderBy('degree', 'asc')
                 ->orderBy('cip_category', 'asc')
                 ->orderBy('cip_detail', 'asc')
@@ -24,7 +24,7 @@ class EsrController extends BaseController {
 
     // coerce into a nested tree format
     public function institution(Request $request, $ficeCode) {
-        $rows = EsrInstitution::where('fice_code', $ficeCode)
+        $rows = Esr::where('fice_code', $ficeCode)
             ->orderBy('degree', 'asc')
             ->orderBy('cip_category', 'asc')
             ->orderBy('cip_detail', 'asc')

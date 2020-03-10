@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\EsrInstitution;
+use App\Models\Esr;
 use Faker\Generator as Faker;
 
-$factory->define(EsrInstitution::class, function (Faker $faker) {
+$factory->define(Esr::class, function (Faker $faker) {
     $degrees = [
         "Advanced Certificates",
         "Associate Degrees",
