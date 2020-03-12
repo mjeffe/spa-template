@@ -52,8 +52,15 @@ return [
 
         'api.sqlite' => [
             'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
+            //'url' => env('DATABASE_URL'),
+            //env('DB_DATABASE', database_path('database.sqlite')),
             'database' => database_path(env('DB_DATABASE', 'database.sqlite')),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+        'api.sqlite.testing' => [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],

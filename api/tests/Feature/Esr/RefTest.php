@@ -4,9 +4,17 @@ namespace Tests\Feature\Esr;
 
 use Tests\BaseTestCase;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RefTest extends BaseTestCase {
+
+    use DatabaseMigrations;
+
+    public function setUp() : void {
+        parent::setUp();
+        $this->seed('DatabaseSeeder');
+    }
+
 
     /** @test */
     public function it_returns_institutions() {
@@ -20,6 +28,7 @@ class RefTest extends BaseTestCase {
     public function it_returns_institutions_with_specific_institution_ref_structure() {
         $response = $this->apiGet('/esr/ref/institutions');
 
+        //dd($this->unwrap($response));
         $response->assertJsonStructure(['data' => [['value', 'text', 'institution_years']]]);
     }
 

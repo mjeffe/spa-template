@@ -9,9 +9,11 @@ abstract class BaseTestCase extends TestCase {
 
     protected $baseUrl = '/v1';
 
+    /*
     public function setUp() : void {
         parent::setUp();
     }
+     */
 
     protected function unwrap($response) {
         return $response->json()['data'];
