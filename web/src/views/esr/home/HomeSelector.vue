@@ -69,10 +69,9 @@ export default {
             this.$router.push({ name: 'esr.degree' });
         },
 
-        selectInstitution(selection) {
-            this.$store.dispatch('esr/getInstitution', selection).then(
-                this.$router.push({ name: 'esr.institution' })
-            );
+        async selectInstitution(selection) {
+            await this.$store.dispatch('esr/getInstitution', selection);
+            this.$router.push({ name: 'esr.institution' });
         }
     },
 };

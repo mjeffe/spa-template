@@ -3,7 +3,7 @@
 //
 
 // used below in configureWebpack section
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
