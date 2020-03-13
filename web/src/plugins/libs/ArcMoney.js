@@ -6,8 +6,8 @@
  * @returns {Intl.NumberFormat} numberFormatter
  */
 const currencyFormatter = (locale, options) => {
-    let defaultLocale = 'en-us';
-    let defaultOptions = {
+    const defaultLocale = 'en-us';
+    const defaultOptions = {
         style: 'currency',
         currency: 'USD',
         maximumFractionDigits: 2,
@@ -81,7 +81,7 @@ class ArcMoney {
      * @return ArcMoney
      */
     static difference(amounts) {
-        let initial = new ArcMoney(amounts[0] || 0);
+        const initial = new ArcMoney(amounts[0] || 0);
 
         return amounts.slice(1).reduce(
             (total, amount) => total.minus(amount),
@@ -96,7 +96,7 @@ class ArcMoney {
      * @return ArcMoney
      */
     static total(amounts) {
-        let initial = new ArcMoney(amounts[0] || 0);
+        const initial = new ArcMoney(amounts[0] || 0);
 
         return amounts.slice(1).reduce(
             (total, amount) => total.plus(amount),
@@ -113,8 +113,8 @@ class ArcMoney {
      * @return ArcMoney
      */
     static totalOfKey(amounts, key) {
-        let amountItems = Object.values(amounts);
-        let initial = new ArcMoney(amountItems[0][key] || 0);
+        const amountItems = Object.values(amounts);
+        const initial = new ArcMoney(amountItems[0][key] || 0);
 
         return amountItems.slice(1)
             .reduce(
@@ -129,12 +129,12 @@ class ArcMoney {
      * @return {number} value
      */
     static asMoneyValue(amount) {
-        let money = Number(amount);
+        const money = Number(amount);
         return Number.isNaN(money) ? Number(0) : money;
     }
 
     static asMoneyDisplay(amount) {
-        let money = this.asMoneyValue(amount);
+        const money = this.asMoneyValue(amount);
         return (currencyFormatter('en-US', {
             style: 'currency',
             currency: 'USD',

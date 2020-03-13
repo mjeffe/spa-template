@@ -33,7 +33,7 @@ store.dispatch('auth/init')
     .then((resp) => {
         // console.log('Finished running auth/init, bootstrapping Vue.js App');
 
-        window['App'] = new Vue({
+        window.App = new Vue({
             router,
             store,
             render: h => h(App)

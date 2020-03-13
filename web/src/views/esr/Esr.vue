@@ -11,7 +11,7 @@
 import ParticipantLogos from './ParticipantLogos.vue';
 
 export default {
-    name: 'ESR',
+    name: 'Esr',
 
     components: {
         ParticipantLogos,

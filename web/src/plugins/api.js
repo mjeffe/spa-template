@@ -24,11 +24,11 @@ export default {
     },
 
     setApiToken(token) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     },
 
     clearApiToken() {
-        delete axios.defaults.headers.common['Authorization'];
+        delete axios.defaults.headers.common.Authorization;
     },
 
     get(url) { return handleMethod('GET', url, null); },

@@ -26,7 +26,7 @@ export default {
     },
 
     computed: {
-        ...mapState('esrRef', [ 'degrees' ]),
+        ...mapState('esrRef', ['degrees']),
 
         options() {
             return arc.arrayOfObjectsSort(this.degrees, 'text');

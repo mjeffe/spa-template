@@ -26,7 +26,7 @@ export default {
     },
 
     computed: {
-        ...mapState('esrRef', [ 'majors' ]),
+        ...mapState('esrRef', ['majors']),
 
         options() {
             return arc.arrayOfObjectsSort(this.majors, 'text');

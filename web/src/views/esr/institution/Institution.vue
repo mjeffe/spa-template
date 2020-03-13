@@ -20,8 +20,8 @@ export default {
     },
 
     computed: {
-        ...mapState('esr', [ 'esrData' ]),
-        ...mapState('esrRef', [ 'year' ]),
+        ...mapState('esr', ['esrData']),
+        ...mapState('esrRef', ['year']),
     },
 };
 </script>

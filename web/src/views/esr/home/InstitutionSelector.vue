@@ -26,7 +26,7 @@ export default {
     },
 
     computed: {
-        ...mapState('esrRef', [ 'institutions' ]),
+        ...mapState('esrRef', ['institutions']),
 
         twoYearInstitutions() {
             return this.institutions.filter(item => item.institution_years === '2');
