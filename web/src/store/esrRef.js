@@ -34,7 +34,6 @@ export const esrRef = {
                 ctx.commit('SET_INSTITUTIONS', resp);
             } catch (err) {
                 ctx.commit('SET_INSTITUTIONS', []);
-                console.log(err);
                 throw err;
             }
         },
@@ -50,7 +49,6 @@ export const esrRef = {
                 ctx.commit('SET_DEGREES', resp);
             } catch (err) {
                 ctx.commit('SET_DEGREES', []);
-                console.log(err);
                 throw err;
             }
         },
@@ -66,7 +64,6 @@ export const esrRef = {
                 ctx.commit('SET_MAJORS', resp);
             } catch (err) {
                 ctx.commit('SET_MAJORS', []);
-                console.log(err);
                 throw err;
             }
         },

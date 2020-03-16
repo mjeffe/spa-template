@@ -2,7 +2,6 @@ import { createLocalVue, shallowMount } from '@vue/test-utils';
 import BootstrapVue from 'bootstrap-vue';
 import router from '@/router';
 import Vuex from 'vuex';
-// import hlp from '@/tests/Client/testHelpers';
 import Esr from '@/views/esr/Esr.vue';
 import ParticipantLogos from '@/views/esr/ParticipantLogos.vue';
 

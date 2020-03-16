@@ -14,25 +14,9 @@
  *   sinon.stub(api, 'get').resolves(hlp.fakeApi(data));
  *   ...
  */
-import arc from '~/plugins/arc';
-import api from '~/store/common/api';
+import arc from '@/plugins/arc';
 import Vuex from 'vuex';
 
-
-/* 
- * Use to replace arc logging functions
- *
- * Example Usage:
- *
- *   import arc from '~/plugins/arc';
- *   arc.log.debug = hlp.log;
- */
-export const log = function() {
-    return function() { };
-};
-export const disableDebugLog = function() {
-    arc.log.debug = log;
-};
 
 /*
  * assert if instance is arc.Money object
@@ -59,37 +43,6 @@ export const clone = function(obj) {
 export const fakeApi = function(data) {
     // note, we are not copying 'data', but returning a reference to it
     return { 'data': data };
-};
-
-/*
- * Simplifies stubbing api calls.
- *
- * Pass the data you want the api to return.
- */
-export const stubApiGet = function(data) {
-    return sinon.stub(api, 'get').resolves(fakeApi(data));
-};
-export const stubApiPut = function(data) {
-    return sinon.stub(api, 'put').resolves(fakeApi(data));
-};
-export const stubApiPost = function(data) {
-    return sinon.stub(api, 'post').resolves(fakeApi(data));
-};
-export const stubApiPatch = function(data) {
-    return sinon.stub(api, 'patch').resolves(fakeApi(data));
-};
-export const stubApiDelete = function(data) {
-    return sinon.stub(api, 'delete').resolves(fakeApi(data));
-};
-
-export const stubApi = function(data) {
-    return {
-        get: sinon.stub(api, 'get').resolves(fakeApi(data)),
-        put: sinon.stub(api, 'put').resolves(fakeApi(data)),
-        post: sinon.stub(api, 'post').resolves(fakeApi(data)),
-        patch: sinon.stub(api, 'patch').resolves(fakeApi(data)),
-        delete: sinon.stub(api, 'delete').resolves(fakeApi(data)),
-    };
 };
 
 
@@ -141,16 +94,8 @@ export const storeFactory = function(overridesArg) {
 };
 
 export default {
-    log,
-    disableDebugLog,
     clone,
-    stubApi,
     fakeApi,
-    stubApiGet,
-    stubApiPut,
-    stubApiPost,
-    stubApiPatch,
-    stubApiDelete,
     storeFactory,
     assertIsArcMoneyObject,
     click,

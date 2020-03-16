@@ -2,8 +2,7 @@
  * Commonly used functions
  */
 import Money from './libs/ArcMoney';
-
-// import cloneDeep from 'lodash.clonedeep'; // eslint-disable-line import/extensions
+import cloneDeep from 'lodash.clonedeep'; // eslint-disable-line import/extensions
 
 const methods = {
     // Sort by a property value and handle numbers and number string values
@@ -22,12 +21,10 @@ const methods = {
         return array.sort(this.dynamicSort(property));
     },
 
-    /*
     // return a deep copy of an object (note import of lodash.cloneDeep above)
     clone(obj) {
         return cloneDeep(obj);
     },
-    */
 
     isEmpty(obj) {
         return (typeof obj === 'object') ? Object.keys(obj).length === 0 : obj;
