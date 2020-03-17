@@ -8,7 +8,7 @@
                     {{ year - 3 }} and {{ year - 2 }}
                 </b-col>
                 <b-col class="subheader-title text-center">
-                    {{ year - 2 }} and {{ year - 1 }} First Year Empoloyment Reported in Arkansas
+                    {{ year - 2 }} and {{ year - 1 }} First Year Employment Reported in Arkansas
                 </b-col>
             </b-row>
             <b-row class="header-title">
