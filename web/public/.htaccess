@@ -1,10 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /spa/
+  RewriteBase /e2e/
 
   RewriteRule ^index\.html$ - [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /spa/index.html [L]
+  RewriteRule . /e2e/index.html [L]
 </IfModule>
