@@ -14,10 +14,11 @@ const esrRoutes = [
                 component: () => import(/* webpackChunkName: "esr-degree" */ '../views/esr/degree/Degree.vue'),
             },
             {
-                path: 'institution',
+                path: 'institution/:ficeCode',
                 name: 'esr.institution',
                 component: () => import(
                     /* webpackChunkName: "esr-institution" */ '../views/esr/institution/Institution.vue'),
+                props: true,
             },
             {   /* default */
                 path: '',

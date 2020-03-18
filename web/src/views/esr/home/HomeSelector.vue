@@ -69,9 +69,8 @@ export default {
             this.$router.push({ name: 'esr.degree' });
         },
 
-        async selectInstitution(selection) {
-            await this.$store.dispatch('esr/getInstitution', selection);
-            this.$router.push({ name: 'esr.institution' });
+        selectInstitution(selection) {
+            this.$router.push({ name: 'esr.institution', params: { ficeCode: selection } });
         }
     },
 };

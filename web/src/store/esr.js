@@ -19,6 +19,7 @@ export const esr = {
 
     actions: {
         async getInstitution(ctx, id) {
+            ctx.commit('SET_ESR_DATA', null);
             ctx.commit('SET_INSTITUTION', id);
 
             try {

@@ -1,10 +1,13 @@
 <template>
     <div>
-        <p class="institution-title">
-            {{ esrData.institution }} - {{ this.year }} Economic Security Report
-        </p>
+        <app-spinner v-if="loading" class="page-spinner"><p>Loading...</p></app-spinner>
+        <div v-else>
+            <p class="institution-title">
+                {{ esrData.institution }} - {{ this.year }} Economic Security Report
+            </p>
 
-        <Degree :degrees="esrData.degrees"></Degree>
+            <Degree :degrees="esrData.degrees"></Degree>
+        </div>
     </div>
 </template>
 
@@ -15,6 +18,16 @@ import Degree from './Degree.vue';
 export default {
     name: 'ESRInstitution',
 
+    props: {
+        ficeCode: { type: String, required: true },
+    },
+
+    data() {
+        return {
+            loading: false,
+        };
+    },
+
     components: {
         Degree,
     },
@@ -23,6 +36,12 @@ export default {
         ...mapState('esr', ['esrData']),
         ...mapState('esrRef', ['year']),
     },
+
+    async created() {
+        this.loading = true;
+        await this.$store.dispatch('esr/getInstitution', this.ficeCode);
+        this.loading = false;
+    }
 };
 </script>
 
