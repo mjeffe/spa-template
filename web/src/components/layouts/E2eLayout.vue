@@ -5,7 +5,6 @@
             <template v-slot:left>
                 <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
                 <b-nav-item :to="{ name: 'esr.home' }" exact exact-active-class="active-nav">ESR</b-nav-item>
-                <b-nav-item :to="{ name: 'demo' }" exact exact-active-class="active-nav">Demo</b-nav-item>
             </template>
 
             <!-- for future use, when we add login capabilities
@@ -21,14 +20,29 @@
             -->
         </app-navbar>
 
-        <div class="app-content">
+        <!-- the notifications container, just needs to be somewhere on the page -->
+        <app-alerts />
+
+        <div class="container-fluid app-content">
             <transition name="page-fade" mode="out-in">
                 <router-view></router-view>
             </transition>
         </div>
 
-        <!-- the notifications container just needs to be somewhere on the page -->
-        <app-alerts/>
+        <footer class="app-footer">
+            <b-row>
+                <b-col>
+                    <div class="footer-copyright">© 2020 Copyright:
+                        <a href="https://arc.arkansas.gov/">Arkansas Research Center</a>
+                    </div>
+                </b-col>
+                <b-col class="text-center">
+                </b-col>
+                <b-col>
+                    <participant-logos />
+                </b-col>
+            </b-row>
+        </footer>
     </div>
 </template>
 
@@ -36,6 +50,7 @@
 import { mapGetters } from 'vuex';
 import NavbarTop from '@/components/NavbarTop.vue';
 import AppAlerts from '@/components/AppAlerts.vue';
+import ParticipantLogos from '@/components/ParticipantLogos.vue';
 
 export default {
     name: 'Layout',
@@ -43,7 +58,13 @@ export default {
     components: {
         'app-navbar': NavbarTop,
         'app-alerts': AppAlerts,
+        'participant-logos': ParticipantLogos,
     },
+
+    data() {
+        return { };
+    },
+
     computed: {
         ...mapGetters('auth', [
             'isLoggedIn',
@@ -79,6 +100,7 @@ body {
 }
 .app-content {
     margin-top: 50px; /* account for top navbar */
+    min-height: 75vh;
 }
 .app-compl-accent { /* complimentary accent color */
     color: #2c3e50;
@@ -103,6 +125,10 @@ body {
     a:active { background-color:#c1b3af; }
 }
 
+.app-footer {
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
 .app-navbar-color {
     color: #13314d;
 }
