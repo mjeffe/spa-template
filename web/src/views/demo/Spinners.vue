@@ -20,10 +20,23 @@
 
         <hr />
 
-        Use the app default spinner:
+        <p>
+        Use the app default spinner: <br/>
+        Note that this spinner and the "Extra" spinners listed below, all have a default slot
+        so you can pass a "loading" message. See example on the full page spinner below.
+        </p>
 
         <button class="btn btn-primary" v-on:click="showSpinner = !showSpinner">Toggle</button>
         <app-spinner v-if="showSpinner" />
+
+        <hr />
+
+        <p>
+        Add the <code>page-spinner</code> class to turn it into a full page
+        spinner (it only works properly with some of these spinners. Test and see.)
+        </p>
+        <button class="btn btn-primary" v-on:click="loading = !loading">Toggle</button>
+        <app-spinner v-if="loading" class="page-spinner"><p>Loading...</p></app-spinner>
 
         <hr />
 
@@ -44,6 +57,7 @@ export default {
     data() {
         return {
             showSpinner: false,
+            loading: false,
         };
     },
 };

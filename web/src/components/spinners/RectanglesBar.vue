@@ -5,10 +5,13 @@
         <div class="rect3"></div>
         <div class="rect4"></div>
         <div class="rect5"></div>
+
+        <slot></slot>
     </div>
 </template>
 
 <script>
+// source: https://tobiasahlin.com/spinkit/
 export default {
     name: 'RectanglesBar',
     data() {
@@ -22,7 +25,7 @@ export default {
 .spinner {
     display: inline-block;
     /* margin: 100px auto; */
-    width: 50px;
+    /* width: 50px; */
     height: 40px;
     text-align: center;
     font-size: 10px;

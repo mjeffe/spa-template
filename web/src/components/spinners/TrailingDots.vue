@@ -3,10 +3,13 @@
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
+
+        <slot></slot>
     </div>
 </template>
 
 <script>
+// source: https://tobiasahlin.com/spinkit/
 export default {
     name: 'TrailingDots',
     data() {
@@ -20,7 +23,7 @@ export default {
 .spinner {
     display: inline-block;
     /* margin: 100px auto 0; */
-    width: 70px;
+    /* width: 70px; */
     text-align: center;
 }
 

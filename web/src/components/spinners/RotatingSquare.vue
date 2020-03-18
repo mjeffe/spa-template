@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// source: https://tobiasahlin.com/spinkit/
 export default {
     name: 'RotatingSquare',
     data() {
