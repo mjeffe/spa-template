@@ -7,7 +7,7 @@
                 <span class="lead text-muted">Arkansas' Education to Employment longitudinal reports</span>
             </b-col>
             <b-col>
-                <EsrMasthead />
+                <graph-carousel/>
             </b-col>
         </b-row>
         <b-row>
@@ -27,13 +27,13 @@
 </template>
 
 <script>
-import EsrMasthead from './esr/home/EsrMasthead.vue';
+import GraphCarousel from '@/components/GraphCarousel.vue';
 
 export default {
     name: 'home',
 
     components: {
-        EsrMasthead,
+        GraphCarousel,
     },
 };
 </script>

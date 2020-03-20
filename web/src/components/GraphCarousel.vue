@@ -1,5 +1,5 @@
 <template>
-    <div xclass="esr-masthead">
+    <div>
         <b-carousel
             id="esr-carousel"
             v-model="slide"
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'EsrMasthead',
+    name: 'GraphCarousel',
 
     data() {
         return {
@@ -42,9 +42,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.esr-masthead {
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
 </style>
