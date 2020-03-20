@@ -52,5 +52,6 @@ Route::group(['prefix' => 'esr'], function () {
     });
 
     Route::get('institution/{id}', 'EsrController@institution');
+    Route::get('institution/{id}/csv', 'EsrController@downloadCsv');
 });
 
