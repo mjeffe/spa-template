@@ -1,19 +1,21 @@
 <template>
     <div>
-        <ESRMasthead />
-        <HomeSelector />
+        <EsrSelectors />
+
+        <EsrHomeContent class="mt-5" />
     </div>
 </template>
 
 <script>
-import ESRMasthead from './ESRMasthead.vue';
-import HomeSelector from './HomeSelector.vue';
+import EsrSelectors from './EsrSelectors.vue';
+import EsrHomeContent from './EsrHomeContent.vue';
 
 export default {
     name: 'ESRHome',
+
     components: {
-        ESRMasthead,
-        HomeSelector,
+        EsrSelectors,
+        EsrHomeContent,
     },
 
     data() {

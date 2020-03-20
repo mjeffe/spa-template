@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="mt-3 h4 text-center">Education and Employment Information</p>
+        <p class="h2 xtext-center">Explore Education to Employment Outcomes</p>
         <b-card-group deck>
             <b-card
               border-variant="secondary"
@@ -44,7 +44,7 @@ import DegreeSelector from './DegreeSelector.vue';
 import InstitutionSelector from './InstitutionSelector.vue';
 
 export default {
-    name: 'HomeSelector',
+    name: 'EsrSelectors',
 
     components: {
         MajorSelector,

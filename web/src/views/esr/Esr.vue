@@ -16,6 +16,7 @@ export default {
 <style scoped lang="scss">
 .esr-container {
     background: #fff;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 </style>

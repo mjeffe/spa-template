@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: 'ESRMasthead',
+    name: 'EsrMasthead',
 
     data() {
         return {
