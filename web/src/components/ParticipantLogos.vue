@@ -16,7 +16,7 @@ export default {
     name: 'ParticipantLogos',
 
     props: {
-        height: { type: String, default: '60' },
+        height: { type: String, default: '40' },
 
         // use or replace the defaults
         logos: {
