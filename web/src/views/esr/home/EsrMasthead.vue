@@ -17,7 +17,6 @@
             <b-carousel-slide img-src="@/assets/images/esr/2018/graph-1240x350-cost-of-tuition.png" />
             <b-carousel-slide img-src="@/assets/images/esr/2018/graph-1240x350-thirty-year-career-earnings.png" />
         </b-carousel>
-        <hr />
     </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <p class="h2 xtext-center">Explore Education to Employment Outcomes</p>
         <b-card-group deck>
             <b-card
               border-variant="secondary"

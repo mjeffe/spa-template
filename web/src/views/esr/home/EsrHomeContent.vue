@@ -2,11 +2,11 @@
     <div>
         <b-card no-body>
             <b-tabs card>
-                <b-tab title="Downloads" active>
-                    <EsrDownloads />
+                <b-tab title="Methodology" active>
+                    <EsrMethodology />
                 </b-tab>
-                <b-tab title="Tab 2">
-                    <b-card-text>Tab contents 2</b-card-text>
+                <b-tab title="Downloads">
+                    <EsrDownloads />
                 </b-tab>
             </b-tabs>
         </b-card>
@@ -15,12 +15,14 @@
 
 <script>
 import EsrDownloads from './EsrDownloads.vue';
+import EsrMethodology from './EsrMethodology.vue';
 
 export default {
     name: 'EsrHomeContent',
 
     components: {
         EsrDownloads,
+        EsrMethodology,
     },
 
     data() {

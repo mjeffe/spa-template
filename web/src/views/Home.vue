@@ -1,12 +1,13 @@
 <template>
     <div class="home-container">
-        <b-row class="mb-5 align-items-center">
-            <b-col cols="2">
-                <img alt="ADWS logo" height="100" src="../assets/images/ADWS_Div_Logo_High_Res_RGG_7.19.png">
+        <b-row align-v="end" class="mb-5">
+            <b-col cols="6">
+                <img alt="ADWS logo" height="100" src="@/assets/images/ADWS_Div_Logo_High_Res_RGG_7.19.png">
+                <p class="h2">Education to Employment</p>
+                <span class="lead text-muted">Arkansas' Education to Employment longitudinal reports</span>
             </b-col>
             <b-col>
-                <h2>Education to Employment</h2>
-                <span class="lead text-muted">Arkansas' Education to Employment longitudinal reports</span>
+                <EsrMasthead />
             </b-col>
         </b-row>
         <b-row>
@@ -26,8 +27,14 @@
 </template>
 
 <script>
+import EsrMasthead from './esr/home/EsrMasthead.vue';
+
 export default {
     name: 'home',
+
+    components: {
+        EsrMasthead,
+    },
 };
 </script>
 
