@@ -1,7 +1,7 @@
 # SPA Starter Template
 
 A starter project with some basics scaffolding for running a single SPA client
-against it's own api. Laravel 6.2 API with jwt-auth and Vue 2.6.10 with Vue-cli.
+against it's own api. `Laravel` 6.2 API with `jwt-auth` and `Vue` 2.6.10 with `Vue-cli`.
 
 ## Cloning
 
