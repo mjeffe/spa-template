@@ -3,29 +3,48 @@
 A starter project with some basics scaffolding for running a single SPA client
 against it's own api. Laravel 6.2 API with jwt-auth and Vue 2.6.10 with Vue-cli.
 
-This project is disctinct from the `template-api-clients` project in that this
-is only intended to run with a single client, it does not implement realms,
-temporal tables or an of the other sophisticated stuff in that project.
-
 ## Cloning
 
 To use this template as the starting point for a new project, you need get a
 bare clone, then push to your new repo.
+
+### Cloning to your github repo
+First create your new repo using the web interface, then:
+
+Get a bare clone of this template
 ```
-# create new repo in the AWS Console, or using the cli like this:
+git clone --bare https://github.com/mjeffe/spa-template.git tmp_repo
+```
+Then push it to **your** your new repo with the --all flag
+```
+cd tmp_repo
+git push https://github.com/<my-username>/my_repo.git --all
+```
+Finally, clone a working copy of your new repoy
+```
+cd ../
+git clone https://github.com/<my-username>/my_repo.git
+```
+
+### Cloning to your AWS repo
+Create new repo in the AWS Console, or using the cli like this
+```
 aws codecommit create-repository --repository-name my_repo --repository-description "My new repository"
-
-# get a bare clone of this template
-git clone --bare https://git-codecommit.us-east-1.amazonaws.com/v1/repos/template-spa my_repo_temp
-
-# and push it with the --all flag, to the newly create CodeCommit repo
+```
+Now get a bare clone of this template
+```
+git clone --bare https://github.com/mjeffe/spa-template.git tmp_repo
+```
+Then push it to **your** your new repo with the --all flag
+```
 cd my_repo_temp
 git push https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo --all
-
-# now clone to a working copy
+```
+Finally, clone a working copy of your new repoy
+```
 cd ../
 git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo
-
+```
 ## Install and Init
 
 For development, you can get up and running quickly by running:
