@@ -11,15 +11,8 @@ class UsersTableSeeder extends Seeder {
             [
                 'fname' => 'Matt',
                 'lname' => 'Jeffery',
-                'email' => 'matt.jeffery@arkansas.gov',
+                'email' => 'matt@mattjeffery.dev',
                 'password' => Hash::make('asdf'),
-                'is_admin' => true,
-            ],
-            [
-                'fname' => 'Jake',
-                'lname' => 'Walker',
-                'email' => 'jake.walker@arkansas.gov',
-                'password' => Hash::make('Welcome2'),
                 'is_admin' => true,
             ],
             [

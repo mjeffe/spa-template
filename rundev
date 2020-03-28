@@ -8,6 +8,7 @@ XTERM=/usr/bin/gnome-terminal
 # start client npm server
 cd $home/web
 $XTERM --tab -- npm run serve
+#$XTERM --tab -- npm run test:watch
 
 # start api server
 cd $home/api
