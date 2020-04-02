@@ -18,7 +18,12 @@ Vue.use(Notifications);
 // pick one as <app-spinner>
 Vue.component('app-spinner', TrailingDots);
 
+//
 // debug code to catch and print uncaught exceptions
+//
+// If you get the dreaded "uncaught exception" error, uncomment this code and
+// restart. It can sometimes be helpful for figuring out where the exception is
+// coming from.
 /*
 window.addEventListener('unhandledrejection', function(event) {
     console.log('uncaught exception!');
