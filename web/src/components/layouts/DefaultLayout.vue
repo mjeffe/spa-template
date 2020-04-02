@@ -7,7 +7,7 @@
                 <b-nav-item :to="{ name: 'esr.home' }" exact exact-active-class="active-nav">ESR</b-nav-item>
             </template>
 
-            <!-- for future use, when we add login capabilities
+            <!-- if you want login capabilities
             <template v-slot:right v-if="!isLoggedIn">
                 <b-nav-item :to="{ name: 'login' }">Login</b-nav-item>
             </template>
