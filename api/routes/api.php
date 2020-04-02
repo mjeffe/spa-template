@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 | These routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group.
 |
-| NOTE: all api routes are prefixed with : /v1
+| All api routes are prefixed with '/v1'
 | This is defined in the RouteServiceProvider api group
 */
 
@@ -41,17 +41,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'admin']], funct
 
 /*
 |--------------------------------------------------------------------------
-| ESR routes
+| Demo routes
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'esr'], function () {
-    Route::group(['prefix' => 'ref'], function () {
-        Route::get('institutions', 'RefController@institutions');
-        Route::get('degrees', 'RefController@degrees');
-        Route::get('majors', 'RefController@majors');
-    });
-
-    Route::get('institution/{id}', 'EsrController@institution');
-    Route::get('institution/{id}/csv', 'EsrController@downloadCsv');
+Route::group(['prefix' => 'demo'], function () {
+    Route::get('institution', 'DemoController@institutions');
+    Route::get('institution/{id}', 'DemoController@institution');
 });
 

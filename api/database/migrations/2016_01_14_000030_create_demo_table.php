@@ -4,28 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEsrTable extends Migration {
+class CreateDemoTable extends Migration {
     public function up() {
-        Schema::create('esr', function (Blueprint $table) {
+        Schema::create('demo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('reporting_level');
             $table->text('fice_code');
             $table->text('institution');
-            $table->text('degree');
-            $table->text('cip_2')->nullable();
-            $table->text('cip_category')->nullable();
-            $table->text('cip_4')->nullable();
-            $table->text('cip_detail')->nullable();
-            $table->integer('graduates');
-            $table->integer('pct_employed');
-            $table->integer('avg_first_year_wages');
-            $table->integer('pct_full_time');
-            $table->integer('avg_first_year_full_time_wages');
             $table->integer('institution_years');
         });
     }
 
     public function down() {
-        Schema::dropIfExists('esr');
+        Schema::dropIfExists('demo');
     }
 }

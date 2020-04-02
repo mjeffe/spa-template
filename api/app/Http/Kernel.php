@@ -42,7 +42,7 @@ class Kernel extends HttpKernel
             'json',
             'throttle:60,1',
             'bindings',
-            //'auth:api',
+            //'auth:api',  // you may want to default all api routes to be authenticated
         ],
     ];
 
