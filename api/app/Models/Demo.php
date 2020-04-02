@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Esr extends Model {
-    protected $table = 'esr';
+    protected $table = 'demo';
     
     // read-only table, so fillable is empty
     protected $fillable = [];

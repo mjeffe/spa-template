@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use App\Http\Resources\BaseResource;
 
-class Esr extends BaseResource {
+class Demo extends BaseResource {
 
     public function toArray($request) {
         return [
