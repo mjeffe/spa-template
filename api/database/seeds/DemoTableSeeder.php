@@ -1,6 +1,6 @@
 <?php
 
-class EsrTableSeeder extends BaseSeeder {
+class DemoTableSeeder extends BaseSeeder {
 
     public function run() {
         DB::table('demo')->truncate();
