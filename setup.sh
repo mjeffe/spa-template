@@ -42,7 +42,6 @@ Setting up WEB client
 =======================================
 
 "
-cp .env.example .env
 cp .env.local.example .env.local
 cp .env.production.local.example .env.production.local
 npm install
