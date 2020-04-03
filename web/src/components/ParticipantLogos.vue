@@ -23,8 +23,7 @@ export default {
             type: Array,
             default: () => [{
                 alt: 'ARC Logo',
-                // src: require('@/assets/images/esr/2019/logo-arc-129x60.jpg'),
-                src: require('@/assets/images/arc_logo_new01_header_web_bw2_sea.png'),
+                src: require('@/assets/images/arc-logo-a-319x89.png'),
                 link: 'https://arc.arkansas.gov/'
             }]
         },
