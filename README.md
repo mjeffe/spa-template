@@ -1,7 +1,15 @@
+![Vue.js logo](web/src/assets/images/vuejs-logo.sm.png) ![Laravel logo](web/src/assets/images/laravel-logo.min.svg) 
 # SPA Starter Template
 
 This is a template project with some basics scaffolding for building a Single
-Page App (SPA) client and REST API backend.  
+Page App (SPA) client with [Vue.js](https://vuejs.org/) and REST API backend with
+[Laravel](https://laravel.com/).
+
+This project is an outcome of some of my work at the
+[Arkansas Research Center](https://arc.arkansas.gov)
+and as such it has a few defaults we usually need, such as our logo and
+copyright in the client's footer, etc. I've left them in because they
+serve as useful placeholders for anyone.
 
 The API uses:
 * [Laravel 6.x](https://laravel.com/)
@@ -14,8 +22,9 @@ The web client uses:
   * Vuex
   * webpack
   * jest
-  * eslint
+  * eslint (using `@vue/standard` with a few custom rule overrides in `web/.eslintrc.js`)
   * sass
+* [bootstrap-vue](https://bootstrap-vue.js.org/)
 * [Axios](https://github.com/axios/axios) for API access
 * [vue-notifications](https://github.com/euvl/vue-notification) for toast style notifications
 
@@ -28,54 +37,40 @@ from it's API to be a good clean way to organize, develop, and test, and it
 provides good flexibility for deployment.  This template has been a good
 starting place for several of my recent projects.
 
-**!!!! USE AT YOUR OWN RISK !!!!** This code is useful to me so I'm making it available
-to others, but I make no guarantees whatsoever.
-
+## !!!! USE AT YOUR OWN RISK !!!!
+This code is useful to me so I'm making it available to others, but I make no guarantees whatsoever.
 
 ## Cloning
 
-To use this template as the starting point for a new project, you need to get a
-bare clone, then push to your own new repo with the --all flag.
+You can clone/fork/copy/download this project any way you like. However, you
+probably don't want any of my branches, commit history, etc. so I would
+recommend init'ing a new repo with this code as your initial import. This is
+how I do it.
 
-### Cloning to your AWS CodeCommit repo
-Create new CodeCommit repo (or use the AWS Console)
+Start by creating your new repo (here I'll call it `my_repo`). On github, I like to use the web interface, for AWS I use:
 ```
 aws codecommit create-repository --repository-name my_repo --repository-description "My new repository"
 ```
-Get a bare clone of this template
+
+Then clone this one, clear out history and init
 ```
-git clone --bare https://github.com/mjeffe/spa-template.git tmp_repo
-```
-Push it to **your** your new repo with the --all flag
-```
+git clone --depth=1 https://github.com/mjeffe/spa-template.git tmp_repo
 cd tmp_repo
-git push https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo --all
-```
-Finally, clone a working copy of your new repo
-```
-cd ..
-git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo
-rm -fr tmp_repo
+rm -fr .git
+git init
+git add .
+git commit -m "Initial import"
 ```
 
-### Cloning to your github repo
-Create your new repo (for github, I prefer using the web interface) then:
+Set the origin and push
+```
+git remote add origin https://github.com/<my-username>/my_repo.git
+# or for aws
+#git remote add origin https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my_repo
+git push -u origin master
+```
 
-Get a bare clone of this template
-```
-git clone --bare https://github.com/mjeffe/spa-template.git tmp_repo
-```
-Then push it to **your** your new repo with the --all flag
-```
-cd tmp_repo
-git push https://github.com/<my-username>/my_repo.git --all
-```
-Finally, clone a working copy of your new repo
-```
-cd ..
-git clone https://github.com/<my-username>/my_repo.git my_repo
-rm -fr tmp_repo
-```
+Finally, I usually clone a clean working copy and inspect, just to make sure it all worked as I think it did.
 
 ## Install and Init
 
@@ -106,13 +101,11 @@ functional. Assuming defaults, then:
 * The client app is served on `http://localhost:8080`.
 * The api is served on `http://localhost:8000/v1`.
 
-For daily development, I'm often working on either the api or the web app, with
-their respective testing tools. However, to run the entire app, open a
-terminal, cd to your working directory, and run:
+To run the entire app, open a terminal, cd to your working directory, and run:
 ```
 rundev
 ```
-Point your browser at `localhost:8080` and log in with one of the users created
+Point your browser at `http://localhost:8080` and log in with one of the users created
 in `api/database/seeds/UsersTableSeeder.php`.  You will, of course, want to
 modify this seeder to add your own users, then rebuild with `php artisan
 migrate:fresh --seed`.
@@ -122,6 +115,22 @@ tabs in your terminal running the client npm server on `localhost:8080`, the
 api laravel server on `localhost:8000` and a tail of the laravel log. I find
 this a useful setup, but once again, this is your repo, so modify rundev to
 suit your needs.
+
+However, for daily development, I'm often working on either the api or the web app, with
+their respective testing tools. So, run the bits in `rundev` manually. For example:
+
+For the Vue App:
+```
+cd web
+npm run test:watch
+# See web/package.json "scripts" section for list of run options
+```
+For the API:
+```
+cd api
+php artisan serve
+# I manually run vendor/bin/phpunit as needed
+```
 
 ## Deploying to Production
 

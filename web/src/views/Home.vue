@@ -2,37 +2,64 @@
     <div class="home-container">
         <b-row>
             <b-col>
-                <h1>SPA Starter Template</h1>
-                <p>
-                This starter template is an outcome of some of my work at the
-                <a href="https://arc.arkansas.gov">Arkansas Research Center</a>,
-                which is why it has a few defaults I usually need, such as our
-                logo and copyright in the footer.  It is essentially a vue-cli
-                installation, with a some basics set up, such as a default
-                template (color scheme, header/footer, menu items, etc),
-                connection to api, authentication and authenticated routes,
-                Vuex stores, vue-router routes, etc.
+                <h1><img alt="Vue.js logo" height="100" src="@/assets/images/vuejs-logo.png">SPA Starter Template</h1>
+                <p class="lead">
+                    This is the Vue.js client default home. See this project's
+                    <span class="text-muted">README.md</span> for more detailed information.
                 </p>
-                A few notes:
+                <h3>Menu navbar</h3>
+                <p>
+                    Menu items are defined in <span class="text-muted">web/src/components/DefaultLayout.vue</span>
+                </p>
                 <ul>
                     <li>
-                        Configure stuff in the <span class="text-muted">web/.env.*</span> files, for your deployment.
+                        <span class="font-weight-bold">Home</span>: This page
                     </li>
                     <li>
-                        Modify or copy <span class="text-muted">web/src/components/DefaultLayout</span> to change
-                        the site's base layout, or create multiples to dynamically change the look. Also look
+                        <span class="font-weight-bold">Demo</span>: Shows a few
+                        of the builtin tools, such as spinners, notifications, etc.
+                    </li>
+                    <li>
+                        <span class="font-weight-bold">Institutions</span>: An
+                        exmaple of a page that uses Vuex stores and fetches
+                        data from the api
+                    </li>
+                </ul>
+
+                <h3>Configuration</h3>
+                <p>
+                    For the most part, all configuration is in the standard places. However, I'll mention
+                    some things here that are unique to this setup.
+                </p>
+                <ul>
+                    <li>
+                        <span class="font-weight-bold">web/.env.*</span>: Adjust these build settings for your
+                        development and production deployments. Ok, this is Vue.js standard, but just a reminder.
+                    </li>
+                    <li>
+                        <span class="font-weight-bold">Layout</span>:
+                        The site's look and feel is mostly defined in
+                        <span class="text-muted">web/src/components/DefaultLayout.vue</span>. This is
+                        something I'd really like to rework, but for now...
+                        Modify, copy or even create multiples to dynamically change the look. Also look
                         at <span class="text-muted">web/src/assets/styles/main.scss</span>
                     </li>
                     <li>
-                        The <span class="text-muted">web/src/components/DefaultLayout</span> is also where
-                        menubar items are defined.
+                        When you add a new <span class="text-muted">router</span>
+                        or <span class="text-muted">store</span> file, remember to add it to it's
+                        corresponding <span class="text-muted">index.js</span> file, so it will
+                        be automatically loaded.
                     </li>
                     <li>
                         Add <span class="text-muted">meta: { requiresAuth: true }</span>
                         to routes that should be authenticated.
                     </li>
                     <li>
-                        This uses the design pattern of keeping all access to
+                        <span class="text-muted">src/main.js</span> instantiates the Vue App. This is where
+                        you pull in stuff you want to be globally accessible.
+                    </li>
+                    <li>
+                        This project uses the design pattern of keeping all access to
                         the api in stores. Components <span class="text-muted">dispatch</span>
                         actions and <span class="text-muted">mapState</span> or
                         <span class="text-muted">mapGetters</span> as needed.
@@ -42,8 +69,8 @@
         </b-row>
         <b-row>
             <b-col>
-                <img alt="ADWS logo" height="100" src="@/assets/images/logo.png">
-                <hello-world msg="Vue.js vue-cli "/>
+                <hr />
+                <hello-world msg="Vue.js vue-cli Default Information"/>
             </b-col>
         </b-row>
     </div>
@@ -64,5 +91,13 @@ export default {
 <style scoped lang="scss">
 .home-container {
     padding-top: 20px;
+}
+xul {
+    list-style-type: none;
+    padding: 0;
+}
+xli {
+    display: inline-block;
+    margin: 0 10px;
 }
 </style>
