@@ -19,16 +19,21 @@
                         Configure stuff in the <span class="text-muted">web/.env.*</span> files, for your deployment.
                     </li>
                     <li>
-                        Modify or copy <span class="text-muted">web/components/DefaultLayout</span> to change
-                        the site's base layout, or create multiples to dynamically change the look.
+                        Modify or copy <span class="text-muted">web/src/components/DefaultLayout</span> to change
+                        the site's base layout, or create multiples to dynamically change the look. Also look
+                        at <span class="text-muted">web/src/assets/styles/main.scss</span>
+                    </li>
+                    <li>
+                        The <span class="text-muted">web/src/components/DefaultLayout</span> is also where
+                        menubar items are defined.
                     </li>
                     <li>
                         Add <span class="text-muted">meta: { requiresAuth: true }</span>
                         to routes that should be authenticated.
                     </li>
                     <li>
-                        I use design pattern of keeping all access to the api in stores,
-                        then components <span class="text-muted">dispatch</span>
+                        This uses the design pattern of keeping all access to
+                        the api in stores. Components <span class="text-muted">dispatch</span>
                         actions and <span class="text-muted">mapState</span> or
                         <span class="text-muted">mapGetters</span> as needed.
                     </li>

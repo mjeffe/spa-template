@@ -1,4 +1,4 @@
-# ESR - Economic Security Report project
+# SPA Starter Template
 
 This is a template project with some basics scaffolding for building a Single
 Page App (SPA) client and REST API backend.  
@@ -148,57 +148,4 @@ from `example.com/api`. Or sometimes from a subdirectory of root such as
 1. Then my deployment will build the client, push the contents of `dist` to the public html dir, `git pull` the api, `php artisan migrate`, etc.
 
 [YMMV](https://en.wikipedia.org/wiki/Your_mileage_may_vary)
-
-
-
-
-## Build and Deploy
-
-A brief summary of how to serve, build, and deploy this application.
-
-### Setup remote server
-
-You need to be able to get to this project. In our AWS setup, we typically
-proxy sites from one main server to backend servers.  In this example, I'll set
-up to run on `https://arcdev.arkansas.gov/esr`. But if you set up on a single
-server, you can skip some of this.
-
-On _sideshowbob_, edit `/etc/httpd/conf.d/ssl.conf` and add the proxy info.
-Then on _sideshowbob4_ clone the git repo and creat appropriate symlinks.
-```
-cd /var/www/hosts/arcdev.arkansas.gov/src
-git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/esr
-cd ../html/
-ln -s /var/www/hosts/arcdev.arkansas.gov/src/esr esr
-cd ../src/esr/public
-ln -s /var/www/hosts/arcdev.arkansas.gov/src/esr/api/public api
-```
-
-Fix the Laravel directory permissions
-```
-/var/www/hosts/arcdev.arkansas.gov/src/esr/api
-sudo chgrp -R apache storage
-sudo chmod -R g+w storage
-sudo chmod g+s storage
-sudo chgrp -R apache bootstrap/cache
-sudo chmod -R g+w bootstrap/cache 
-sudo chmod g+s bootstrap/cache 
-```
-
-* __NOTE: from now on__ I'll use the `/www` symlink or just `api/` and `web/` to refer to
-the installed locations.
-
-### Build locally
-
-I've had trouble building on sideshowbob4, so decided to build locally and
-transfer to server. This is a much better way to do it anyway.
-
-Edit web/.env.production.local and add the appropriate paths. Then:
-```
-cd web/
-npm run build
-scp -r dist/* sideshowbob4:/www/src/esr/web/public/
-```
-
-Believe it or not, that's all I had to do!
 
