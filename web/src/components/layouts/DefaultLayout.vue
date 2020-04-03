@@ -4,6 +4,7 @@
         <app-navbar id="nav" navbarColorType="dark" navbarColor="#13314d">
             <template v-slot:left>
                 <b-nav-item :to="{ name: 'home' }" exact exact-active-class="active-nav">Home</b-nav-item>
+                <b-nav-item :to="{ name: 'demo' }" exact exact-active-class="active-nav">Demo</b-nav-item>
                 <b-nav-item :to="{ name: 'esr.home' }" exact exact-active-class="active-nav">ESR</b-nav-item>
             </template>
 

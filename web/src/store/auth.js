@@ -99,6 +99,6 @@ export const auth = {
 
     getters: {
         isLoggedIn: state => Boolean(state.token && state.user),
-        isAdmin: state => true,
+        isAdmin: state => true, // hard coded!!! do something with this if you need it
     }
 };

@@ -22,12 +22,9 @@ export default {
         logos: {
             type: Array,
             default: () => [{
-                alt: 'ADWS Logo',
-                src: require('@/assets/images/esr/2019/logo-adws-93x60.jpg'),
-                link: 'https://www.dws.arkansas.gov/'
-            }, {
                 alt: 'ARC Logo',
-                src: require('@/assets/images/esr/2019/logo-arc-129x60.jpg'),
+                // src: require('@/assets/images/esr/2019/logo-arc-129x60.jpg'),
+                src: require('@/assets/images/arc_logo_new01_header_web_bw2_sea.png'),
                 link: 'https://arc.arkansas.gov/'
             }]
         },
