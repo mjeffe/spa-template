@@ -1,11 +1,11 @@
 <template>
     <div class="logo-container">
         <div class="d-flex justify-content-end border-top">
-            <a v-for="logo in logos" :key="logo" :href="logo.link || '#'" target="_blank">
+            <a v-for="logo in logos" :key="logo.link" :href="logo.link || '#'" target="_blank">
                 <img class="mx-3" :height="height" :src="logo.src" :alt="logo.alt"/>
             </a>
-            <a v-for="logo in extraLogos" :key="logo" :href="logo.link || '#'" target="_blank">
-                <img class="mx-3" :height="height" :src="logo.src" :alt="logo.alt"/>
+            <a v-for="xlogo in extraLogos" :key="xlogo.link" :href="xlogo.link || '#'" target="_blank">
+                <img class="mx-3" :height="height" :src="xlogo.src" :alt="xlogo.alt"/>
             </a>
         </div>
     </div>
