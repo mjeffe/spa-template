@@ -6,11 +6,11 @@
             <b-row>
                 <b-col>
                     <p class="institution-title">Two Year Institutions</p>
-                    <b-table striped hover :fields="fields" :items="twoYearInstitutions"></b-table>
+                    <b-table striped hover :fields="fields" :items="twoYearInstitutions" id="twoYearTbl"></b-table>
                 </b-col>
                 <b-col>
                     <p class="institution-title">Four Year Institutions</p>
-                    <b-table striped hover :fields="fields" :items="fourYearInstitutions"></b-table>
+                    <b-table striped hover :fields="fields" :items="fourYearInstitutions" id="fourYearTbl"></b-table>
                 </b-col>
             </b-row>
         </div>
