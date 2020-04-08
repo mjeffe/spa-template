@@ -34,11 +34,14 @@ As you can see by the directory structure, the api and web clients could easily
 be separated into their own projects. It is certainly possible to build a web
 SPA client entirely within the Laravel ecosystem, but I find separating the SPA
 from it's API to be a good clean way to organize, develop, and test, and it
-provides good flexibility for deployment.  This template has been a good
-starting place for several of my recent projects.
+provides good flexibility for deployment.
 
 ## !!!! USE AT YOUR OWN RISK !!!!
 This code is useful to me so I'm making it available to others, but I make no guarantees whatsoever.
+
+## Screenshot of client
+
+![SPA Template screenshot](web/src/assets/images/spa-template-screenshot.png)
 
 ## Cloning
 
@@ -113,10 +116,10 @@ migrate:fresh --seed`.
 The `rundev` script works for me on Ubuntu 18.04. It will open three additional
 tabs in your terminal running the client npm server on `localhost:8080`, the
 api laravel server on `localhost:8000` and a tail of the laravel log. I find
-this a useful setup, but once again, this is your repo, so modify rundev to
+this a useful setup, but once again, modify rundev to
 suit your needs.
 
-However, for daily development, I'm often working on either the api or the web app, with
+For daily development, I'm often working on either the api or the web app, with
 their respective testing tools. So, run the bits in `rundev` manually. For example:
 
 For the Vue App:

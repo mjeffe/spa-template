@@ -2,7 +2,10 @@
     <div class="home-container">
         <b-row>
             <b-col>
-                <h1><img alt="Vue.js logo" height="100" src="@/assets/images/vuejs-logo.png">SPA Starter Template</h1>
+                <h1>
+                    <img alt="Vue.js logo" height="100" src="@/assets/images/vuejs-logo.png">SPA Starter Template
+                    <small class="text-muted">with Laravel backend API</small>
+                </h1>
                 <p class="lead">
                     This is the Vue.js client default home. See this project's
                     <span class="text-muted">README.md</span> for more detailed information.
