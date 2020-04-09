@@ -50,6 +50,9 @@ probably don't want any of my branches, commit history, etc. so I would
 recommend init'ing a new repo with this code as your initial import. This is
 how I do it.
 
+*Note, this is a github `template` project, so for github users, you can simply
+click the `Use this template` button next to the clone button.*  Otherwise...
+
 Start by creating your new repo (here I'll call it `my_repo`). On github, I like to use the web interface, for AWS I use:
 ```
 aws codecommit create-repository --repository-name my_repo --repository-description "My new repository"

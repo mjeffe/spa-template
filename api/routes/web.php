@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// catch all route for SPA
-// Route to handle page reload in Vue except for api routes
+// Catch all route for SPA **IF** you are serving your SPA out of laravel's public dir
+// IOW, Route to handle page reload in Vue except for api routes
 /*
 Route::get('/{any?}', function (){
     return view('welcome');
