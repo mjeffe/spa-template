@@ -1,7 +1,7 @@
 ![Vue.js logo](web/src/assets/images/vuejs-logo.sm.png) ![Laravel logo](web/src/assets/images/laravel-logo.min.svg) 
 # SPA Starter Template
 
-**Update: Sep 2021** *This project is old, I would not recommend using it! There are a number of security vulnerabilities in dependencies (as identified by GitHub's dependabot).*
+**THIS PROJECT HAS BEEN ARCHIVED.** *This project is old, I would not recommend using it! There are a number of security vulnerabilities in dependencies (as identified by GitHub's dependabot).*
 
 This is a template project with some basics scaffolding for building a Single
 Page App (SPA) client with [Vue.js](https://vuejs.org/) and REST API backend with
