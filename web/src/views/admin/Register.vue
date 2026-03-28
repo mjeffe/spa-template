@@ -14,8 +14,8 @@
                         </b-form-input>
                     </b-form-group>
 
-                    <b-form-group id="email-group" label="Email Address" label-for="email">
-                        <b-form-input id="email" type="email" v-model="email" required>
+                    <b-form-group id="email-address-group" label="Email Address" label-for="email-address">
+                        <b-form-input id="email-address" type="email" v-model="email-address" required>
                         </b-form-input>
                     </b-form-group>
 
@@ -47,7 +47,7 @@ export default {
         return {
             fname: '',
             lname: '',
-            email: '',
+            email-address: '',
             password: '',
             password_confirmation: '',
             is_admin: null,
@@ -59,7 +59,7 @@ export default {
             const data = {
                 fname: this.fname,
                 lname: this.lname,
-                email: this.email,
+                email-address: this.email-address,
                 password: this.password,
                 password_confirmation: this.password_confirmation,
                 is_admin: this.is_admin,
